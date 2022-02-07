@@ -1,0 +1,163 @@
+.product-items {
+  display: flex;
+  flex-direction: column;
+  padding: 0 48px 0 32px;
+  @include breakpoint(mx991) {
+    padding: 0 20px 0 20px;
+  }
+  .masonry-wrapper {
+    margin-right: -15px;
+    margin-left: -15px;
+    @include breakpoint(mx767) {
+      margin-right: -5px;
+      margin-left: -5px;
+    }
+    .col {
+      float: left;
+      width: 25%;
+      padding-right: 15px;
+      padding-left: 15px;
+      @include breakpoint(mx991) {
+        width: 50%;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+    .card {
+      position: relative;
+      margin-bottom: 30px;
+      width: 100%;
+      display: block;
+      border: none;
+      box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
+        0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+      border-radius: 8px;
+      @include breakpoint(mx767) {
+        margin-bottom: 10px;
+      }
+      .btn-like {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        box-shadow: none;
+        outline: none;
+      }
+      .card-body {
+        padding: 1em;
+        .card-title {
+          @include font-family(
+            $font-main,
+            1.125em,
+            var(--text-colour1),
+            500,
+            1.225em
+          );
+        }
+        .card-text {
+          @include font-family(
+            $font-main,
+            0.875em,
+            var(--text-colour1),
+            400,
+            0.875em
+          );
+          b {
+            display: block;
+            @include font-family(
+              $font-main,
+              1.125em,
+              var(--text-colour1),
+              500,
+              1.125em
+            );
+          }
+        }
+        .bte-wrp {
+          transition: ease-in-out 0.4s;
+          position: relative;
+          @include breakpoint(mn768) {
+            overflow: hidden;
+            height: 0;
+          }
+        }
+        .btn {
+          padding: 0;
+          transition: ease-in-out 0.4s;
+          @include breakpoint(mn768) {
+            opacity: 0;
+          }
+          @include breakpoint(mx767) {
+            margin-top: 1rem;
+            height: 38px;
+          }
+        }
+      }
+      &:hover {
+        .card-body {
+          .bte-wrp {
+            height: 60px;
+            .btn {
+              @include breakpoint(mn768) {
+                margin-top: 1rem;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.product-sort {
+  label {
+    white-space: nowrap;
+    @include font-family($font-main, 0.875em, var(--text-colour1), 400, 1);
+    opacity: 0.6;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+  .ant-select-single {
+    width: 149px;
+    height: 38px;
+    .ant-select-selector {
+      position: absolute;
+      min-width: 149px;
+      height: 38px;
+      background: #ffffff;
+      border: 1px solid #e5e5ec;
+      box-sizing: border-box;
+      border-radius: 6px;
+      outline: none;
+      box-shadow: none;
+      .ant-select-selection-item {
+        display: flex;
+        align-items: center;
+        @include font-family($font-main, 0.875em, var(--text-colour1), 400, 1);
+      }
+    }
+  }
+}
+.sort-widget {
+  margin: 20px 0 30px 0;
+  display: flex;
+  align-items: center;
+  @include breakpoint(mx767) {
+    margin: 15px 0 15px 0;
+    flex-wrap: wrap;
+  }
+  .sort-title {
+    @include font-family($font-main, 1.25em, var(--text-colour1), 400, 1);
+    margin-bottom: 0;
+  }
+  .sort-ctrl {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+}

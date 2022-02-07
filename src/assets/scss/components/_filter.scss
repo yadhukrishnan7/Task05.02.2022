@@ -1,0 +1,104 @@
+.filterHolder {
+  padding: 23px 48px 0 32px;
+  justify-content: space-between;
+  @include breakpoint(mx991) {
+    padding: 23px 20px 0 20px;
+  }
+  @include breakpoint(mx991) {
+    padding: 0px 20px 0 20px;
+  }
+  p {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-bottom: 14px;
+  }
+  .filterWidget {
+    display: flex;
+    flex-wrap: wrap;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 13px;
+      row-gap: 10px;
+      li {
+        padding: 0 14px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        background: #e8e8ff;
+        border-radius: 6px;
+        .closeIcon {
+          margin-left: 6px;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+      }
+    }
+    .filterCtrl {
+      margin-left: auto;
+      display: flex;
+      .clearBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 38px;
+        width: 82px;
+        border-radius: 6px;
+        margin-right: 10px;
+        @include font-family(
+          $font-main,
+          0.875em,
+          var(--secondary-dark),
+          400,
+          1
+        );
+        background-color: #fff;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        transition: ease-in-out 0.4s;
+        &:hover {
+          background-color: #fafafa;
+        }
+      }
+      .filtersBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 38px;
+        width: 82px;
+        border-radius: 6px;
+        @include font-family(
+          $font-main,
+          0.875em,
+          var(--secondary-dark),
+          400,
+          1
+        );
+        background-color: #fff;
+        border: solid 1px var(--secondary-dark);
+        cursor: pointer;
+        outline: none;
+        box-shadow: none;
+        transition: ease-in-out 0.4s;
+        &:hover {
+          color: #fff;
+          background-color: var(--secondary-dark);
+        }
+      }
+    }
+  }
+}

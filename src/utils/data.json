@@ -1,0 +1,60 @@
+{
+    "data" : [
+        {
+            "ID": 0,
+            "image": "img-product-1.jpg",
+            "title": "Bond Street By Red Tape Remixa Sneakers",
+            "details": "Men Crater Remixa Sneakers",
+            "price" : 5467
+        },
+        {
+            "ID": 1,
+            "image": "img-product-2.jpg",
+            "title": "Bond Street By Red Tape Remixa Sneakers",
+            "details": "Men Crater Remixa Sneakers",
+            "price" : 5467
+        },
+        {
+            "ID": 2,
+            "image": "img-product-3.jpg",
+            "title": "Bond Street By Red Tape Remixa Sneakers",
+            "details": "Men Crater Remixa Sneakers",
+            "price" : 5467
+        },
+        {
+            "ID": 3,
+            "image": "img-product-4.jpg",
+            "title": "Bond Street By Red Tape Remixa Sneakers",
+            "details": "Men Crater Remixa Sneakers",
+            "price" : 5467
+        },
+        {
+            "ID": 4,
+            "image": "img-product-5.jpg",
+            "title": "Bond Street By Red Tape Remixa Sneakers",
+            "details": "Men Crater Remixa Sneakers",
+            "price" : 5467
+        },
+        {
+            "ID": 5,
+            "image": "img-product-6.jpg",
+            "title": "Bond Street By Red Tape Remixa Sneakers",
+            "details": "Men Crater Remixa Sneakers",
+            "price" : 5467
+        },
+        {
+            "ID": 6,
+            "image": "img-product-7.jpg",
+            "title": "Bond Street By Red Tape Remixa Sneakers",
+            "details": "Men Crater Remixa Sneakers",
+            "price" : 5467
+        },
+        {
+            "ID": 7,
+            "image": "img-product-8.jpg",
+            "title": "Bond Street By Red Tape Remixa Sneakers",
+            "details": "Men Crater Remixa Sneakers",
+            "price" : 5467
+        }
+    ]
+}

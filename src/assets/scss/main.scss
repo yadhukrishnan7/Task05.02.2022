@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~antd/dist/antd.css";
+
+//FONTS
+@import "./font/roboto";
+
+// UTILS
+@import "./utils/variable";
+@import "./utils/mixins";
+
+//CORE STYLE
+@import "./core/normalize";
+
+//COMPONENTS
+@import "./components/logo";
+@import "./components/layout";
+@import "./components/sidebar";
+@import "./components/header";
+@import "./components/product";
+@import "./components/buttons";
+@import "./components/filter";
+@import "./components/filterDrawer";

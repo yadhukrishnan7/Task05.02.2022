@@ -1,0 +1,40 @@
+.sideBar {
+  position: fixed;
+  display: flex;
+  background-color: var(--primary);
+  z-index: 1;
+  @include breakpoint(mn768) {
+    width: 80px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+  }
+  @include breakpoint(mx767) {
+    width: 100%;
+    bottom: 0;
+  }
+  .navigationRow {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(mx767) {
+      flex-direction: row;
+      width: 100%;
+    }
+    .navLink {
+      width: 80px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: ease-in-out 0.4s;
+      @include breakpoint(mx767) {
+        width: 25%;
+      }
+      &:hover,
+      &.active {
+        background-color: var(--secondary);
+      }
+    }
+  }
+}

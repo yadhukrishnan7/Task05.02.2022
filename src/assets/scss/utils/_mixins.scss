@@ -1,0 +1,76 @@
+@mixin font-family($font, $size, $color, $font-weight, $line-height) {
+  font-family: $font;
+  font-size: $size;
+  color: $color;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+@mixin breakpoint($point) {
+  @if $point == mx767 {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == mn768 {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == mx991 {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $point == mx992 {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == mn1200 {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point == mx1199 {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  }
+}
+.row {
+  &.to3px {
+    margin-left: -3px;
+    margin-right: -3px;
+    [class^="col-"] {
+      padding-right: 3px;
+      padding-left: 3px;
+    }
+  }
+  &.to4px {
+    margin-left: -4px;
+    margin-right: -4px;
+    [class^="col-"] {
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+  }
+  &.to6px {
+    margin-left: -6px;
+    margin-right: -6px;
+    [class^="col-"] {
+      padding-right: 6px;
+      padding-left: 6px;
+    }
+  }
+  &.to8px {
+    margin-left: -8px;
+    margin-right: -8px;
+    [class^="col-"] {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+  &.to0px {
+    margin-left: 0px;
+    margin-right: 0px;
+    [class^="col"] {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  }
+}

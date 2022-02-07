@@ -1,0 +1,207 @@
+.ant-drawer-content-wrapper {
+  width: 485px !important;
+  @include breakpoint(mx767) {
+    overflow: hidden;
+    width: 100% !important;
+    height: 83% !important;
+    right: 0 !important;
+    left: 0 !important;
+    top: auto;
+    bottom: 0;
+    -webkit-border-top-left-radius: 16px;
+    -webkit-border-top-right-radius: 16px;
+    -moz-border-radius-topleft: 16px;
+    -moz-border-radius-topright: 16px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .ant-drawer-header {
+    padding: 40px 30px 0;
+    border: none;
+    @include breakpoint(mx767) {
+      padding: 28px 17px;
+      border-bottom: solid 1px #e5e5ec;
+    }
+  }
+  .ant-drawer-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .ant-drawer-content {
+    overflow: visible;
+    .ant-drawer-header {
+      padding: 16px 32px;
+      @include breakpoint(mx991) {
+        padding: 28px 17px 13px;
+      }
+      .ant-drawer-header-title {
+        position: relative;
+        .ant-drawer-title {
+          @include font-family($font-main, 1.25em, var(--text-colour1), 700, 1);
+        }
+        button {
+          color: #041131;
+          opacity: 0;
+          pointer-events: none;
+          position: absolute;
+          width: 36px;
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: ease-in-out 0.4s;
+          @include breakpoint(mn992) {
+            left: -50px;
+            background: #f6f9fe;
+          }
+          @include breakpoint(mx991) {
+            right: 0;
+            margin-right: 0;
+            background: transparent;
+          }
+          &:hover {
+            background-color: #ccc;
+          }
+        }
+      }
+    }
+    .ant-checkbox-wrapper {
+      display: flex;
+      align-items: center;
+      > span {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .tabGrid {
+      @include breakpoint(mx767) {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 132px auto;
+      }
+      .nav-tab {
+        padding: 32px 10px 20px 17px;
+        background: #eef3ff;
+        @include breakpoint(mn768) {
+          display: none;
+        }
+        ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          list-style-type: none;
+          li {
+            @include font-family($font-main, 1em, var(--text-colour1), 400, 1);
+            opacity: 0.6;
+            transition: ease-in-out 0.4s;
+            margin-bottom: 21px;
+            cursor: pointer;
+            &:hover,
+            &.active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .filter-container {
+      padding: 30px;
+      @include breakpoint(mx767) {
+        padding: 30px 12px;
+      }
+      .filter-row {
+        margin-bottom: 30px;
+        &.hide {
+          @include breakpoint(mx767) {
+            display: none;
+          }
+        }
+        &.show {
+          @include breakpoint(mx767) {
+            display: block;
+          }
+        }
+        strong {
+          display: block;
+          margin-bottom: 10px;
+        }
+        .color-col {
+          margin-right: 7px;
+          display: inline-block;
+          height: 16px;
+          width: 16px;
+          border-radius: 50%;
+        }
+      }
+      .gender-list {
+        @include breakpoint(mx767) {
+          margin-bottom: 12px;
+        }
+      }
+      span {
+        position: relative;
+        top: 0px;
+        @include font-family($font-main, 0.875em, var(--text-colour1), 400, 1);
+      }
+      .num-label {
+        @include font-family($font-main, 0.75em, var(--text-colour2), 400, 1);
+      }
+    }
+  }
+  .filter-btn-row {
+    margin-top: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.16);
+    .clear-btn {
+      border-radius: 0;
+      cursor: pointer;
+      transition: ease-in-out 0.4s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      height: 55px;
+      outline: none;
+      box-shadow: none;
+      border: none;
+      @include font-family($font-main, 1em, var(--text-colour1), 400, 1);
+      background-color: #fff;
+      &:hover {
+        color: var(--text-colour1);
+        background-color: #fafafa;
+      }
+    }
+    .apply-btn {
+      border-radius: 0;
+      cursor: pointer;
+      transition: ease-in-out 0.4s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      height: 55px;
+      outline: none;
+      box-shadow: none;
+      border: none;
+      background-color: var(--secondary-dark);
+      @include font-family($font-main, 1em, #fff, 400, 1);
+      &:hover {
+        background-color: var(--text-colour1);
+      }
+    }
+  }
+}
+.ant-drawer-open {
+  .ant-drawer-header-title {
+    button {
+      opacity: 1 !important;
+      pointer-events: visible !important;
+    }
+  }
+}

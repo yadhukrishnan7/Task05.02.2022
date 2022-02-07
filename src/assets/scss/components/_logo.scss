@@ -1,0 +1,12 @@
+.brand-icon {
+  width: 80px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7.75rem;
+  cursor: pointer;
+  @include breakpoint(mx767) {
+    display: none;
+  }
+}

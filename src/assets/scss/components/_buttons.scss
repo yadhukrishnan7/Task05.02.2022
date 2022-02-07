@@ -1,0 +1,11 @@
+.btn {
+  outline: none;
+  box-shadow: none;
+  &.btn-primary {
+    @include font-family($font-main, 1em, #fff, 700, 1);
+    width: 100%;
+    height: 44px;
+    background: #1750ff;
+    border-radius: 6px;
+  }
+}
