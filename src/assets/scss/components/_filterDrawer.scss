@@ -42,8 +42,6 @@
         }
         button {
           color: #041131;
-          opacity: 0;
-          pointer-events: none;
           position: absolute;
           width: 36px;
           height: 36px;
@@ -54,6 +52,8 @@
           cursor: pointer;
           transition: ease-in-out 0.4s;
           @include breakpoint(mn992) {
+            opacity: 0;
+            pointer-events: none;
             left: -50px;
             background: #f6f9fe;
           }
@@ -115,15 +115,11 @@
       }
       .filter-row {
         margin-bottom: 30px;
-        &.hide {
-          @include breakpoint(mx767) {
-            display: none;
-          }
+        @include breakpoint(mx767) {
+          display: none;
         }
         &.show {
-          @include breakpoint(mx767) {
-            display: block;
-          }
+          display: block;
         }
         strong {
           display: block;
@@ -200,8 +196,10 @@
 .ant-drawer-open {
   .ant-drawer-header-title {
     button {
-      opacity: 1 !important;
-      pointer-events: visible !important;
+      @include breakpoint(mn992) {
+        opacity: 1 !important;
+        pointer-events: visible !important;
+      }
     }
   }
 }

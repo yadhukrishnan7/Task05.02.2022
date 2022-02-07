@@ -7,14 +7,17 @@ export const FilterDrawer = (props) => {
 
   const [visible, setVisible] = useState(false);
   const [filterValues, setFilterValues] = useState([]);
-  const [isTabval, setTab] = useState('');
+  const [placement, setPlacement] = useState('right');
 
   useEffect(() => {
     let isLoad = true;
+    let intViewportWidth = window.innerWidth;
+
     if(isLoad){
         if(props.visible) setVisible(props.visible)
         if(props.selectedIndex) removeFilter(props.selectedIndex)
         if(props.clearFilters) clearFilter(props.clearFilters)
+        if(intViewportWidth < 767) setPlacement('bottom')
     }
     return () => {
         isLoad = false;
@@ -47,15 +50,20 @@ export const FilterDrawer = (props) => {
     props.setVisibles(false);
   };
 
-  const [placement, setPlacement] = useState('right');
-
-  const handleTab = (e) => {
-    const elementOne = document.querySelector(".filter-row");
-    const elementTwo = document.querySelector(".filter-row");
-    elementOne.classList.remove("show");
-    elementTwo.classList.remove("active");
-    setTab(e)
+  function handleTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("filter-row");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
   }
+
 
   return (
     <>
@@ -63,15 +71,15 @@ export const FilterDrawer = (props) => {
             <div className='tabGrid'>
                 <div className='nav-tab'>
                     <ul>
-                        <li className={`active ${isTabval === "tabOne" && 'active'}`} onClick={()=>handleTab('tabOne')}>Gender</li>
-                        <li className={`${isTabval === "tabTwo" && 'active'}`} onClick={()=>handleTab('tabTwo')}>Price</li>
-                        <li className={`${isTabval === "tabThree" && 'active'}`} onClick={()=>handleTab('tabThree')}>Categories</li>
-                        <li className={`${isTabval === "tabFour" && 'active'}`} onClick={()=>handleTab('tabFour')}>Color</li>
+                        <li className={`tablinks active`} onClick={(e)=>handleTab(e,'tabOne')}>Gender</li>
+                        <li className={`tablinks`} onClick={(e)=>handleTab(e,'tabTwo')}>Price</li>
+                        <li className={`tablinks`} onClick={(e)=>handleTab(e,'tabThree')}>Categories</li>
+                        <li className={`tablinks`} onClick={(e)=>handleTab(e,'tabFour')}>Color</li>
                     </ul>
                 </div>
                 <div className='filter-container'>
                     <Checkbox.Group onChange={onChange} value={filterValues} >
-                        <div className={`filter-row show ${isTabval === "tabOne" ? 'show' : 'hide'}`}>
+                        <div id="tabOne" className={`filter-row show`}>
                             <div className="filter-check-row">
                                 <div className="filter-check-list">
                                         <Row className='to6px'>
@@ -91,7 +99,7 @@ export const FilterDrawer = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className={`filter-row ${isTabval === "tabTwo" ? 'show' : 'hide'}`}>
+                        <div id="tabTwo" className={`filter-row`}>
                             <strong>Price</strong>
                             <Row className='to6px'>
                                 <Col sm={6}>
@@ -118,7 +126,7 @@ export const FilterDrawer = (props) => {
                                 </Col>
                             </Row>
                         </div>
-                        <div className={`filter-row ${isTabval === "tabThree" ? 'show' : 'hide'}`}>
+                        <div id="tabThree" className={`filter-row `}>
                             <strong>Categories</strong>
                             <Row className='to6px'>
                                 <Col sm={6}>
@@ -154,7 +162,7 @@ export const FilterDrawer = (props) => {
                                 </Col>
                             </Row>
                         </div>
-                        <div className={`filter-row ${isTabval === "tabFour" ? 'show' : 'hide'}`}>
+                        <div id="tabFour" className={`filter-row`}>
                             <strong>Color</strong>
                             <Row className='to6px'>
                                 <Col sm={12}>

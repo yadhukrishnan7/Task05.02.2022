@@ -18,7 +18,7 @@
     @media (max-width: 991px) {
       @content;
     }
-  } @else if $point == mx992 {
+  } @else if $point == mn992 {
     @media (min-width: 992px) {
       @content;
     }
