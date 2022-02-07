@@ -1,14 +1,3 @@
-<img src="/Github_Banner-1.jpg" alt="Guid to app" />
-
-## About 
-
-The project bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
-
-The main idea is to build a clean and awesome frontend application using react.js with the help of React Bootstrap, Antd, sass.
-You can easly develope a large scale application using these package.
-
-Please follow the instructions and build your own idea.
-
 ## Technologies used 
 
 1. React (https://github.com/facebook/create-react-app)
